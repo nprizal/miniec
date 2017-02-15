@@ -14,7 +14,7 @@ class EventCategoriesController < ApplicationController
 	end
 
 	def edit
-		@event_category = Category.find params[:id]
+		@event_category = EventCategory.find params[:id]
 		if request.patch? then
 			@event_category.update category_params
 			redirect_to '/event_categories'

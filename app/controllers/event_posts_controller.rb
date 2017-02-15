@@ -30,16 +30,14 @@ class EventPostsController < ApplicationController
 	def delete
 		@event_post = Event.find(params[:id])
 		if request.post? then
-			@blogpost.destroy
+			@event_post.destroy
 			redirect_to '/event_posts'
 		end
 	end
-
 
 	private
 	def event_posts_params
 		params.require(:event_post).permit(:title, :content, :event_category_id)
 	end
-
 
 end

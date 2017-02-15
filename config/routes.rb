@@ -29,6 +29,9 @@ Rails.application.routes.draw do
 	get 'event_categories/add'
 	post 'event_categories/add'
 
+# 	get 'event_categories/:id', to: 'event_categories#edit'
+# 	patch 'event_categories/:id', to: 'event_categories#edit'
+	
 	get 'event_categories/:id', to: 'event_categories#edit'
 	patch 'event_categories/:id', to: 'event_categories#edit'
 

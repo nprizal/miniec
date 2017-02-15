@@ -1,13 +1,13 @@
 <p>※以下を削除してもいいですか？</p>
 <table>
 	<tr><th>Id</th>
-		<td><%= @even_post.id %></td></tr>
+		<td><%= @event_post.id %></td></tr>
 	<tr><th>title</th>
-		<td><%= @even_post.title %></td></tr>
+		<td><%= @event_post.title %></td></tr>
 	<tr><th>content</th>
 		<td><%= @event_post.content %></td></tr>
 </table>
 <%= form_tag controller: "event_posts", action: "delete" do %>
-	<%= hidden_field_tag "id", {value: @even_post.id} %>
+	<%= hidden_field_tag "id", {value: @event_post.id} %>
 	<%= submit_tag "送信" %>
 <% end %>
