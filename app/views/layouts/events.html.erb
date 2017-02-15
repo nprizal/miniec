@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RailsApp</title>
+		<%= csrf_meta_tags %>
+
+		<%= stylesheet_link_tag 'events', 
+			'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag @event_config.stylename, 
+			'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'events', 
+			'data-turbolinks-track': 'reload' %>
+	</head>
+
+	<body>
+		<header id="header">
+			<h1><a href="/events"><%= @event_config.title %></a></h1>
+			<h2><%= @event_config.subtitle %></h2>
+		</header>
+		<hr>
+		<div id="side">
+		<% EventCategory.all.each do |category| %>
+			<p><a href="/events/category/<%= category.id %>">
+				<%= category.name %></a></p>
+		<% end %>
+		</div>
+		<main id="main">
+		<%= yield %>
+		</main>
+	</body>
+</html>

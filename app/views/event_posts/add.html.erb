@@ -1,0 +1,33 @@
+<p>イベントの投稿</p>
+<% if @event_post.errors.any? %>
+<ul>
+	<% @event_post.errors.full_messages.each do |err| %>
+		<li><%= err %></li>
+	<% end %>
+</ul>
+<% end %>
+<table>
+	<%= form_for(@event_post, url:{controller:'event_posts', action:'add'}) do |form| %>
+	<tr><th>タイトル</th>
+		<td><%= form.text_field :title %></td></tr>
+	<tr><th>本文</th>
+		<td><%= form.text_area :content, {cols:40, rows:10} %></td></tr>
+	<tr><th>カテゴリID</th>
+		<td><%= form.text_field :event_category_id %></td></tr>
+	<tr><th></th>
+		<td><%= form.submit "送信" %></td></tr>
+	<% end %>
+</table>
+<hr>
+<p>※カテゴリの一覧</p>
+<table>
+	<tr>
+		<th>Id</th><th >カテゴリ</th>
+	</tr>
+	<% @event_categories.each do |obj| %>
+	<tr>
+		<td><%= obj.id %></td>
+		<td><%= obj.name %></td>
+	</tr>
+	<% end %>
+</table>

@@ -1,0 +1,18 @@
+<p>※投稿イベントの一覧</p>
+<table>
+	<tr>
+		<th>Id</th><th >タイトル</th>
+			<th>カテゴリ</th><th colspan="2"></th>
+	</tr>
+	<% @data.each do |obj| %>
+	<tr>
+		<td><%= obj.id %></td>
+		<td><%= obj.title %></td>
+		<td><%= obj.event_category.name %></td>
+		<td><a href="/event_posts/<%= obj.id %>">Edit</a></td>
+		<td><a href="/event_posts/delete/<%= obj.id %>">Delete</a></td>
+	</tr>
+	<% end %>
+</table>
+<p><a href="/event_posts/add">新規作成＞＞</a></p>
+
