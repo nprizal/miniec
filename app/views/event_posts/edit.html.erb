@@ -1,4 +1,3 @@
-<h1></h1>
 <p>※「<%= @event_post.title %>」の編集</p>
 <% if @event_post.errors.any? %>
 <ul>
@@ -9,11 +8,11 @@
 <% end %>
 <table>
 	<%= form_for(@event_post, url:{controller:'event_posts', action:'edit'}) do |form| %>
-	<tr><th>n名前</th>
+	<tr><th>イベント名</th>
 		<td><%= form.text_field :title %></td></tr>
-	<tr><th>メッセージ</th>
+	<tr><th>イベントの説明</th>
 		<td><%= form.text_area :content, {cols:40, rows:10} %></td></tr>
-	<tr><th>カテゴリ ID</th>
+	<tr><th>カテゴリID</th>
 		<td><%= form.text_field :event_category_id %></td></tr>
 	<tr><th></th>
 		<td><%= form.submit "送信" %></td></tr>
