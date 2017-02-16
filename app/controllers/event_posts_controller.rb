@@ -28,7 +28,7 @@ class EventPostsController < ApplicationController
 
 
 	def delete
-		@event_post = Event.find(params[:id])
+		@event_post = EventPost.find(params[:id])
 		if request.post? then
 			@event_post.destroy
 			redirect_to '/event_posts'
