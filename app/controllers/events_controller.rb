@@ -11,7 +11,6 @@ class EventsController < ApplicationController
 		@data = EventPost.all.order('created_at desc')
 			.offset(page_size * @page_num)
 			.limit(page_size)
-		@event_config = EventConfig.find 1
 	end
 
 
@@ -26,13 +25,11 @@ class EventsController < ApplicationController
 		@data = EventPost.where('event_category_id = ?',params[:id])
 			.order('created_at desc').offset(page_size * @page_num)
 			.limit(page_size)
-		@event_config = EventConfig.find 1
 	end
 
 
 	def show
 		@event_post = EventPost.find params[:id]
-		@event_config = EventConfig.find 1
 	end
 
 
