@@ -1,10 +1,12 @@
 class EventCategoriesController < ApplicationController
 	layout 'event_categories'
 
+	# カテゴリ一覧
 	def index
 		@data = EventCategory.all
 	end
-
+	
+	# カテゴリ追加
 	def add
 		@event_category = EventCategory.new
 		if request.post? then
@@ -13,6 +15,7 @@ class EventCategoriesController < ApplicationController
 		end
 	end
 
+	# カテゴリ編集	
 	def edit
 		@event_category = EventCategory.find params[:id]
 		if request.patch? then
