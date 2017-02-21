@@ -1,18 +1,1 @@
 <h2>管理画面：イベントカテゴリ一覧</h2>
-<p><a href="/event_categories/add">新規作成>> </a></p>
-<table>
-    <tr>
-        <th>Id</th><th>カテゴリ名</th><th>備考</th><th></th>
-    </tr>
-    <% @data.each do |obj| %>
-        <tr>
-            <td><%= obj.id %></td>
-            <td><%= obj.name %></td>
-            <td><%= obj.memo %></td>
-            <td><a href="/event_categories/<%= obj.id %>">[編集]</a></td>
-        </tr>
-    <% end %>
-</table>
-
-<p><a href="/event_posts">管理画面：イベント一覧>> </a></p>
-<p><a href="/events">ECサイト：TOP へ>> </a></p>

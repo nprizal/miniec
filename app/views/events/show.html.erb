@@ -1,8 +1,0 @@
-<h3 class="show_title"><%= @event_post.title %></h3>
-
-<% contents = @event_post.content.split "\n" %>
-<div class="show_content">
-<% contents.each do |paragraph| %>
-	<p><%= paragraph %></p>
-<% end %>
-</div>
