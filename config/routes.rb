@@ -28,18 +28,9 @@ Rails.application.routes.draw do
 
 	get 'event_categories/add'
 	post 'event_categories/add'
-
-# 	get 'event_categories/:id', to: 'event_categories#edit'
-# 	patch 'event_categories/:id', to: 'event_categories#edit'
 	
 	get 'event_categories/:id', to: 'event_categories#edit'
 	patch 'event_categories/:id', to: 'event_categories#edit'
-
-	get 'event_configs/index'
-	get 'event_configs', to: 'event_configs#index'
-
-	get 'event_configs/edit'
-	patch 'event_configs/edit'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,12 +1,12 @@
 class EventPostsController < ApplicationController
 	layout 'event_posts'
 
-
+	# イベント一覧
 	def index
 		@data = EventPost.all.order('created_at desc')
 	end
 
-
+	# イベント新規
 	def add
 		@event_post = EventPost.new
 		@event_categories = EventCategory.all
@@ -16,7 +16,7 @@ class EventPostsController < ApplicationController
 		end
 	end
 
-
+	# イベント編集
 	def edit
 		@event_post = EventPost.find params[:id]
 		@event_categories = EventCategory.all
@@ -26,7 +26,7 @@ class EventPostsController < ApplicationController
 		end
 	end
 
-
+	# イベント削除
 	def delete
 		@event_post = EventPost.find(params[:id])
 		if request.post? then
