@@ -9,5 +9,5 @@
 </table>
 <%= form_tag controller: "event_posts", action: "delete" do %>
 	<%= hidden_field_tag "id", {value: @event_post.id} %>
-	<%= submit_tag "送信" %>
+	<%= submit_tag "削除" %>
 <% end %>

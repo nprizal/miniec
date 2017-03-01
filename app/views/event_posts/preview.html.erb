@@ -1,0 +1,19 @@
+<h3>プレビュー</h3>
+<hr>
+
+
+	<%= render :template => "events/show" %>
+
+		<!-- Hidden Form -->
+		<%= form_for(@event_post, url:{controller:'event_posts', action:'add'}) do |f| %>
+			<%= f.hidden_field :title, :value => @event_post.title %>
+			<%= f.hidden_field :content, :value => @event_post.content %>
+			<%= f.hidden_field :event_category_id, :value => @event_post.event_category_id %>
+			<%= f.submit "戻る", name: "previous" %>
+			<%= f.submit "投稿" %>
+
+		<% end %>
+
+
+
+</div>

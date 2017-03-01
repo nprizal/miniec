@@ -12,8 +12,11 @@
 		<td><%= form.text_field :title %></td></tr>
 	<tr><th>イベントの説明</th>
 		<td><%= form.text_area :content, {cols:40, rows:10} %></td></tr>
+	<tr><th>イベントの場所</th>
+		<td><%= form.text_field :location %></td></tr>
 	<tr><th>カテゴリID</th>
-		<td><%= form.text_field :event_category_id %></td></tr>
+		<!-- <td><%= form.text_field :event_category_id %></td></tr> -->
+		<td><%= collection_select(:event_post, :event_category_id, EventCategory.all, :id, :name, prompt: true) %></td></tr>
 	<tr><th></th>
 		<td><%= form.submit "送信" %></td></tr>
 	<% end %>

@@ -12,12 +12,16 @@
 		<td><%= form.text_field :title %></td></tr>
 	<tr><th>本文</th>
 		<td><%= form.text_area :content, {cols:40, rows:10} %></td></tr>
+	<tr><th>場所</th>
+		<td><%= form.text_field :location, :input_html =>{:id => 'gmaps-input-address'} %></td></tr>
 	<tr><th>カテゴリID</th>
-		<td><%= form.text_field :event_category_id %></td></tr>
+		<!-- <td><%= form.text_field :event_category_id %></td></tr> -->
+		<td><%= collection_select(:event_post, :event_category_id, EventCategory.all, :id, :name, prompt: true) %></td></tr>
 	<tr><th></th>
-		<td><%= form.submit "送信" %></td></tr>
+		<td><%= form.submit "プレビュー", name:'preview' %><%= form.submit "投稿" %></td></tr>
 	<% end %>
 </table>
+
 <hr>
 <p>※カテゴリの一覧</p>
 <table>

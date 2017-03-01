@@ -11,8 +11,15 @@ class EventPostsController < ApplicationController
 		@event_post = EventPost.new
 		@event_categories = EventCategory.all
 		if request.post? then
-			@event_post = EventPost.create event_posts_params
-			redirect_to '/event_posts'
+			@event_post = EventPost.new event_posts_params
+			if params[:preview] then
+				render 'preview'
+			elsif params[:previous]
+				render 'add'
+			else
+				@event_post.save
+				redirect_to '/event_posts'
+			end
 		end
 	end
 
@@ -37,7 +44,7 @@ class EventPostsController < ApplicationController
 
 	private
 	def event_posts_params
-		params.require(:event_post).permit(:title, :content, :event_category_id)
+		params.require(:event_post).permit(:title, :content, :event_category_id, :location)
 	end
 
 end
